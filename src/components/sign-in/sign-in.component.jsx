@@ -5,7 +5,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
 import {
-  goggleSignInStart,
+  googleSignInStart,
   emailSignInStart,
 } from '../../redux/user/user.actions';
 
@@ -39,7 +39,7 @@ class SignIn extends React.Component {
   };
 
   render() {
-    const { goggleSignInStart } = this.props;
+    const { googleSignInStart } = this.props;
     return (
       <SignInContainer>
         <SignInTitle>I already have an account</SignInTitle>
@@ -66,7 +66,7 @@ class SignIn extends React.Component {
             <CustomButton type="submit"> Sign in </CustomButton>
             <CustomButton
               type="button"
-              onClick={goggleSignInStart}
+              onClick={googleSignInStart}
               isGoogleSignIn
             >
               Sign in with Google
@@ -79,7 +79,7 @@ class SignIn extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  goggleSignInStart: () => dispatch(goggleSignInStart()),
+  googleSignInStart: () => dispatch(googleSignInStart()),
   emailSignInStart: (email, password) =>
     dispatch(emailSignInStart({ email, password })),
 });
